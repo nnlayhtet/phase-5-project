@@ -28,7 +28,7 @@ function App() {
   if (!authChecked) { return <div><h1>Loading Page...</h1> </div> }
   
   return (
-    <div>
+    <div className="App">
       <Router>
         {currentUser ? (
           <AuthenticatedApp

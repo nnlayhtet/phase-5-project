@@ -9,8 +9,8 @@ function Navigation({setCurrentUser, currentUser, handleLogout}) {
         {currentUser?
           <nav id="nav-bar">
             <NavLink className="nav-button" activeClassName="n-active" exact to="/">Home</NavLink>
-            <NavLink className="nav-button" activeClassName="n-active" to="/page1">page1</NavLink>
-            <NavLink className="nav-button" activeClassName="n-active" to="/page2">page2</NavLink>
+            <NavLink className="nav-button" activeClassName="n-active" to="/mygroups">My Groups</NavLink>
+            <NavLink className="nav-button" activeClassName="n-active" to="/createnew">Create New</NavLink>
             <NavLink className="nav-button" activeClassName="n-active" to="/about">About</NavLink>
             <button id="logout-button" onClick={handleLogout}>Log Out</button>
           </nav>:null}

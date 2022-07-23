@@ -2,9 +2,16 @@
   text-align: center;
 }
 
-#app-title{
+#app-title {
   color: darkcyan;
-  text-align: center
+}
+
+.group-card {
+  margin: 1.5rem;
+  padding-bottom: 10px;
+  background-color: rgb(224, 250, 236);
+  border: 2px solid lightgray;
+  text-align: center;
 }
 
 .login-signup {
@@ -12,6 +19,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+#logout-button {
+  background-color: lightpink;
+}
+
+#logout-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 #nav-div {
@@ -30,17 +46,15 @@
   position: relative;
   font-family: "Roboto Condensed";
   background-color: whitesmoke;
-  color: blue;
-  border: 2px solid black;
+  color: green;
+  border: 2px solid gray;
   border-radius: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
   text-align: center;
-  align-items: center;
   width: 100px;
+  text-decoration: none;
 }
 
 .nav-button:hover {
@@ -50,13 +64,4 @@
 
 .n-active {
   color:red;
-}
-
-#logout-button {
-  background-color: lightpink;
-}
-
-#logout-button:hover {
-  cursor: pointer;
-  transform: scale(1.1);
 }

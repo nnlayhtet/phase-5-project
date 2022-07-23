@@ -26,6 +26,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def joined_groups_index
+    joined_groups = current_user.groups
+    render json: joined_groups
+  end
+
   private
 
   def user_params

@@ -1,8 +1,7 @@
 import React from 'react'
-import { Switch, Route, Redirect, useHistory} from 'react-router-dom'
 import Navigation from './Navigation'
-import Home from './Home'
-import About from './About'
+import {useHistory} from 'react-router-dom'
+import Main from './Main'
 
 function AuthenticatedApp({currentUser, setCurrentUser}) {
     
@@ -27,21 +26,7 @@ function AuthenticatedApp({currentUser, setCurrentUser}) {
                 setCurrentUser={setCurrentUser}
                 currentUser={currentUser}
                 handleLogout={handleLogout}/>
-            <Switch>
-                <Route exact path="/">
-                    <Home currentUser={currentUser}/>
-                </Route>
-                <Route path="/about">
-                    <About />
-                </Route>
-                {/* <Route path="/:user">
-                    <User />
-                </Route>
-                <Route>
-                    <NoMatch />
-                </Route> */}
-                <Redirect to= "/" />
-            </Switch>
+            <Main currentUser={currentUser}/>
         </div>
     )
 }
