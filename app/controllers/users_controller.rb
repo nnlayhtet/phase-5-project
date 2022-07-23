@@ -5,7 +5,8 @@ class UsersController < ApplicationController
     users = User.all
     render json: users
   end
-  # get '/api/me'
+  
+  # get '/me'
   def show
     if current_user
       render json: current_user, status: :ok
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # post '/api/signup'
+  # post '/signup'
   def create
     user = User.create(user_params)
     if user.valid?

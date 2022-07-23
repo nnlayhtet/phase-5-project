@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   
   resources :users
   
-  
+  get "/me", to: "users#show" ## retrieveing the user's data from the database using the sessions hash
+  post "/signup", to: "users#create"
+  post "/login", to: "sessions#create" ## mapping the user create method for a POST request to /login
+  delete "/logout", to: "sessions#destroy"
   
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
   

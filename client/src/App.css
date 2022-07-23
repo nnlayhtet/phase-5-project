@@ -2,10 +2,28 @@
   text-align: center;
 }
 
-#nav-bar {
+#app-title{
+  color: darkcyan;
+  text-align: center
+}
+
+.login-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#nav-div {
   padding-top: 20px;
-  padding-bottom: 50px;
-  background-color: lightblue;
+  padding-bottom: 20px;
+  background-color: lightgray;
+}
+
+#nav-bar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-button {
@@ -26,6 +44,19 @@
 }
 
 .nav-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.n-active {
+  color:red;
+}
+
+#logout-button {
+  background-color: lightpink;
+}
+
+#logout-button:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
