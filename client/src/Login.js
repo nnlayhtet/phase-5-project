@@ -43,7 +43,7 @@ function Login({setCurrentUser}) {
   return (
     <div className="login-signup">
         <form onSubmit={handleSubmit}> 
-            <h1>Log In</h1>            
+            <h2>Log In</h2>            
             <label>Username</label>		
             <input 
                 required

@@ -7,7 +7,7 @@ function Search({ searchInput }) {
           <label>Search..</label>
           <input
             onChange={(e)=>(searchInput(e.target.value.toLowerCase()))}
-            placeholder='title or created by'/>
+            placeholder='Topic..., Created By...'/>
           {/* <button>Submit</button> */}
         </form>
     </div>

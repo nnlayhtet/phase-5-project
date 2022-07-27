@@ -1,17 +1,35 @@
 .App {
   text-align: center;
+  /* background-color: antiquewhite; */
 }
 
-#app-title {
+.app-title {
   color: darkcyan;
+}
+
+#delete-button {
+  background-color: rgb(247, 100, 46);
 }
 
 .group-card {
   margin: 1.5rem;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   background-color: rgb(224, 250, 236);
   border: 2px solid lightgray;
   text-align: center;
+}
+
+.group-card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#join-button, #open-button {
+  background-color: lightgreen;
+}
+
+#leave-button {
+  background-color: pink;
 }
 
 .login-signup {
@@ -19,6 +37,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: 2px solid gray;
+  width: 60%;
+  margin:auto;
 }
 
 #logout-button {
@@ -30,9 +51,19 @@
   transform: scale(1.1);
 }
 
+.message-sender {
+  color: red;
+  text-align: right;
+}
+
+.message-receiver {
+  color: blue;
+  text-align: left;
+}
+
 #nav-div {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 1px;
+  padding-bottom: 10px;
   background-color: lightgray;
 }
 
@@ -51,7 +82,7 @@
   border-radius: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   width: 100px;
   text-decoration: none;
@@ -64,4 +95,17 @@
 
 .n-active {
   color:red;
+}
+
+#room {
+  margin: 1.5rem;
+  background-color: rgb(206, 233, 243);
+}
+
+
+
+
+#time-display {
+  color: green;
+  font-size: 10px;
 }

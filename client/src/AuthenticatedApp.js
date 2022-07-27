@@ -19,7 +19,7 @@ function AuthenticatedApp({currentUser, setCurrentUser}) {
             }
         })
     }
-
+    
     return (
         <div>
             <Navigation

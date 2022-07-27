@@ -12,7 +12,12 @@ Rails.application.routes.draw do
   resources :joined_groups
   
   # my custom routes
-  get 'users/:user_id/joined_groups', to: "users#joined_groups_index"
+  get '/users/:user_id/joined_groups', to: "users#joined_groups_index"
+  get '/groups/:group_id/messages', to: "groups#messages_index"
+  post '/groups/join/:group_id', to: "groups#join_group_create"
+  delete '/groups/leave/:group_id', to: "groups#leave_group_destroy"
+
+  ##### post "/users/:user_id/groups", to: "users#create_group"
 
   # routes for signup and login
   get "/me", to: "users#show" ## retrieveing the user's data from the database using the sessions hash
