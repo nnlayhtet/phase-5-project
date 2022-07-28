@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -7,13 +7,16 @@ import actionCable from 'actioncable'
 
 const CableApp ={}
 CableApp.cable = actionCable.createConsumer('ws://localhost:3000/cable')
+export const ActionCableContext = createContext()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    {/* <React.StrictMode> */}
+      <ActionCableContext.Provider value={CableApp.cable}>
+        <App />
+      </ActionCableContext.Provider>
+    {/* </React.StrictMode> */}
   </BrowserRouter>
 );
 

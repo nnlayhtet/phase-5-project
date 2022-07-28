@@ -3,9 +3,17 @@ class MessagesController < ApplicationController
         render json: Message.all
     end
     
+    # def create
+    #     message = Message.create!(message_params)
+    #     render json: message
+    # end
     def create
-        message = Message.create!(message_params)
-        render json: message
+        message = Message.new(message_params)
+        group = Group.find(message_params[:group_id])
+        if message.save
+            GroupChannel.broadcast_to group, message
+            head :ok
+        end
     end
 
     private

@@ -8,7 +8,7 @@ import GroupCard from './GroupCard'
 import CurrentGroup from './CurrentGroup'
 
 
-function Main({currentUser}) {
+function Main({ currentUser }) {
 
     const [ groups, setGroups ] = useState([])
     const [ myGroups, setMyGroups ] = useState([])
@@ -113,7 +113,7 @@ function Main({currentUser}) {
                     <About />
                 </Route>
                 <Route path="/groups/:id">
-                    <CurrentGroup currentUser={currentUser}/>
+                    <CurrentGroup currentUser={currentUser} />
                 </Route>
                 <Redirect to= "/" />
             </Switch>

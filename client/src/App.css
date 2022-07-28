@@ -7,8 +7,27 @@
   color: darkcyan;
 }
 
+#chat-box {
+  margin: 1.5rem;
+  background-color: #fbecfb;
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 4px solid lightgray;
+  border-radius: 10px;
+}
+
+#content {
+  font-size: 20px;
+}
+
 #delete-button {
   background-color: rgb(247, 100, 46);
+}
+
+#end-of-chat, #time-display {
+  color: grey;
+  font-size: 10px;
 }
 
 .group-card {
@@ -37,7 +56,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 2px solid gray;
+  border: 2px solid lightgray;
   width: 60%;
   margin:auto;
 }
@@ -53,18 +72,33 @@
 
 .message-sender {
   color: red;
-  text-align: right;
+  text-align: center;
+  background-color: lightblue;
+  margin-right: 5%;
+  margin-left: 40%;
+  border: 2px solid lightgray;
+  border-radius: 20px;
 }
 
 .message-receiver {
   color: blue;
-  text-align: left;
+  text-align: center;
+  background-color: lightgrey;
+  margin-right: 40%;
+  margin-left: 5%;
+  border: 2px solid lightblue;
+  border-radius: 20px;
+}
+
+#name {
+  font-size: 10px;
 }
 
 #nav-div {
   padding-top: 1px;
   padding-bottom: 10px;
   background-color: lightgray;
+  margin: auto;
 }
 
 #nav-bar{
@@ -97,15 +131,4 @@
   color:red;
 }
 
-#room {
-  margin: 1.5rem;
-  background-color: rgb(206, 233, 243);
-}
 
-
-
-
-#time-display {
-  color: green;
-  font-size: 10px;
-}
