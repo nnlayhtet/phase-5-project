@@ -6,7 +6,8 @@ import { BrowserRouter } from 'react-router-dom'
 import actionCable from 'actioncable'
 
 const CableApp ={}
-CableApp.cable = actionCable.createConsumer('ws://localhost:3000/cable')
+// CableApp.cable = actionCable.createConsumer('wss://localhost:3000/cable')
+CableApp.cable = actionCable.createConsumer('wss://glacial-beyond-60884.herokuapp.com/cable')
 export const ActionCableContext = createContext()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
