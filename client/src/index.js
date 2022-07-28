@@ -7,7 +7,7 @@ import actionCable from 'actioncable'
 
 const CableApp ={}
 // CableApp.cable = actionCable.createConsumer('wss://localhost:3000/cable')
-CableApp.cable = actionCable.createConsumer('wss://glacial-beyond-60884.herokuapp.com/cable')
+CableApp.cable = actionCable.createConsumer('wss://vast-ocean-03320.herokuapp.com/cable')
 export const ActionCableContext = createContext()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
