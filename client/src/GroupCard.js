@@ -9,8 +9,7 @@ function GroupCard({ id, topic, created_by, currentUser, creator_id, members, op
       <div onClick={()=>{member?
                         openClick(id):
                         alert('Please join this group first.')}}>
-          <h4>Topic: {topic}</h4>
-          <p>Created By: {created_by}</p>
+          <p>{topic.toUpperCase()}, by {created_by}</p>
       </div>
           {member?
             <div>

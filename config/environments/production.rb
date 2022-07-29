@@ -93,4 +93,8 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  #added by Nyi Nyi
+  config.web_socket_server_url = "wss://vast-ocean-03320.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://vast-ocean-03320.herokuapp.com', 'http://vast-ocean-03320.herokuapp.com']
 end

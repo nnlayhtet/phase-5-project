@@ -35,6 +35,7 @@ function CreateNew({ currentUser, handleCreate }) {
         <label>Topic:</label>
         <input
           required
+          type="text"
           value={topic}
           onChange={(e)=>setTopic(e.target.value)}
           />

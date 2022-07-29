@@ -26,9 +26,9 @@ class GroupChannel < ApplicationCable::Channel
     end
 
     def received(data)
-        # GroupChannel.broadcast_to(group, { content: content, group_id: group.id, messages: group.messages })
+        GroupChannel.broadcast_to(group, { content: content, group_id: group.id, messages: group.messages })
         # GroupChannel.broadcast_to(group, data)
-        GroupChannel.broadcast_to()
+        # GroupChannel.broadcast_to()
     end
 
     def unsubscribed
