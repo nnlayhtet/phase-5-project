@@ -9,5 +9,5 @@ test:
 production:
   adapter: redis
   # url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  url: redis://redistogo-clean-05440
+  url: redis://redistogo:81704fbe74d9618c70159b92b5f2920f@barb.redistogo.com:9631/
   channel_prefix: phase-5-project
