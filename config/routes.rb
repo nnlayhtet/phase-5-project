@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users
   resources :groups
   resources :messages
-  resources :joined_groups
+  # resources :joined_groups
   
   # my custom routes
   get '/users/:user_id/joined_groups', to: "users#joined_groups_index"

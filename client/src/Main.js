@@ -28,7 +28,7 @@ function Main({ currentUser }) {
     },[])
 
     function openClick (group_id) {
-        history.push(`/groups/${group_id}`)
+        history.push(`/group/${group_id}`)
     }
     
     function leaveClick (group_id) {
@@ -112,7 +112,7 @@ function Main({ currentUser }) {
                 <Route path="/about">
                     <About />
                 </Route>
-                <Route path="/groups/:id">
+                <Route path="/group/:id">
                     <CurrentGroup currentUser={currentUser} />
                 </Route>
                 <Redirect to= "/" />

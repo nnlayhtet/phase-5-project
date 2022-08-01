@@ -57,4 +57,7 @@ Rails.application.configure do
   # Added by NyiNyi
   config.action_cable.disable_request_forgery_protection = true
   config.action_cable.url = "ws://localhost:3000/cable"
+
+  # Added by NyiNyi to set time zone
+  config.time_zone = 'Eastern Time (US & Canada)'
 end

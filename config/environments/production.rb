@@ -94,7 +94,10 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  #added by Nyi Nyi
+  # Added by Nyi Nyi
   config.action_cable.url = "wss://vast-ocean-03320.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://vast-ocean-03320.herokuapp.com', 'http://vast-ocean-03320.herokuapp.com']
+
+  # Added by NyiNyi to set time zone
+  config.time_zone = 'Eastern Time (US & Canada)'
 end
