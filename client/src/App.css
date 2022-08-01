@@ -3,17 +3,19 @@
 }
 
 .app-title {
-  color: darkcyan;
+  /* color: White; */
 }
 
 #chat-box {
   margin: 1rem;
   background-color: #fbecfb;
-  height: 450px;
+  height: 500px;
   overflow-x: hidden;
   overflow-y: auto;
   border: 4px solid lightgray;
   border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
 }
 
 #content {
@@ -31,10 +33,13 @@
 
 .group-card {
   margin: 1.5rem;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
   background-color: rgb(224, 250, 236);
   border: 2px solid lightgray;
   text-align: center;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
 }
 
 .group-card:hover {
@@ -124,3 +129,90 @@
   color:red;
 }
 
+/* Design based on Blue Login Field of Kevin Sleger https://codepen.io/MurmeltierS/pen/macKb */
+/* Design based on Blue Login Field of Kevin Sleger https://codepen.io/MurmeltierS/pen/macKb */
+body {
+  /* background: #44c4e7; */
+  background-size: cover;
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  z-index: -1;
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background: #44c4e7; */
+  /* IE Fallback */
+  /* background: rgba(68, 196, 231, 0.8); */
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  background: rgb(250, 229, 229);
+  width: 285px;
+  margin: -140px 0 0 -182px;
+  padding: 40px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+.form h2 {
+  margin: 0 0 20px;
+  line-height: 1;
+  color: #44c4e7;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.form input {
+  outline: none;
+  display: block;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  color: #ccc;
+  font-family: "Roboto";
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: 0.2s linear;
+  border-radius: 10px;
+}
+
+.form input:focus {
+  color: #333;
+  border: 1px solid #44c4e7;
+}
+
+.form button {
+  cursor: pointer;
+  background: #44c4e7;
+  width: 100%;
+  padding: 10px 15px;
+  border: 0;
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+}
+
+.form button:hover {
+  background: #369cb8;
+}
+
+.error,
+.valid {
+  display: none;
+}
