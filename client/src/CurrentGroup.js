@@ -60,7 +60,7 @@ function CurrentGroup({ currentUser }) {
         headers: {
             'Content-Type':'application/json',
             Accept: "application/json",
-        },
+            },
         body: JSON.stringify({
                             content: content,
                             group_id: id,
@@ -79,11 +79,24 @@ function CurrentGroup({ currentUser }) {
         .then(data => setMessages(data))
     }
 
-    function msgEditClick(message_id){
+
+    function msgEditSubmit(e,message_id){
+        e.preventDefault()
         // console.log(message_id)
+        // console.log(e.target[0].value)
+        fetch(`/messages/edit/${message_id}`,{
+        method: 'PATCH',
+        headers: {
+            'Content-Type':'application/json',
+            Accept: "application/json",
+            },
+        body: JSON.stringify({content:e.target[0].value})
+        })
+        .then(res => res.json())
+        .then(data => setMessages(data))
     }
 
-    const renderMessages = messages.map((m)=><MessageCard key={m.id} id={m.id} content={m.content} time={m.time} sender_name={m.sender_name} currentUser={currentUser} msgDeleteClick={msgDeleteClick} msgEditClick={msgEditClick}/>)
+    const renderMessages = messages.map((m)=><MessageCard key={m.id} id={m.id} content={m.content} time={m.time} sender_name={m.sender_name} currentUser={currentUser} msgDeleteClick={msgDeleteClick} msgEditSubmit={msgEditSubmit}/>)
     const renderMemberList = (currentGroup.members)? (currentGroup.members.map((m)=>m.username).join(', ')):null
 
     return (

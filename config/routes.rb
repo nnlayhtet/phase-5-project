@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/groups/:group_id/messages', to: "groups#messages_index"
   post '/groups/join/:group_id', to: "groups#join_group_create"
   delete '/groups/leave/:group_id', to: "groups#leave_group_destroy"
+  patch 'messages/edit/:message_id', to: "messages#edit_update"
+
 
   ##### post "/users/:user_id/groups", to: "users#create_group"
 

@@ -24,6 +24,14 @@ class MessagesController < ApplicationController
         render json: group.messages.sort
     end
 
+    def edit_update
+        message = Message.find(params[:message_id])
+        message.content = params[:content]
+        message.save
+        group = Group.find(message.group_id)
+        render json: group.messages.sort
+    end
+
     private
 
     def message_params
