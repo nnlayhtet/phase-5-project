@@ -31,7 +31,7 @@ function CreateNew({ currentUser, handleCreate }) {
     <div>
       
       <h4>Create A New Group</h4>
-      <form onSubmit={handleSubmit}>
+      <form className="new-message-form" onSubmit={handleSubmit}>
         {/* <label>Topic:</label> */}
         <textarea
           className="new-message-box"

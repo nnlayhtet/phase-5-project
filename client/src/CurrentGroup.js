@@ -95,7 +95,7 @@ function CurrentGroup({ currentUser }) {
                 <p id="end-of-chat">end of messages</p>
                 <div ref={bottomRef}/>
             </div>    
-            <form onSubmit={handleSubmit}>
+            <form className="new-message-form" onSubmit={handleSubmit}>
                 {/* <label >{currentUser.username} : </label> */}
                 <textarea
                     className="new-message-box"
