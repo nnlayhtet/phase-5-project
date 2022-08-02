@@ -30,16 +30,19 @@ function CreateNew({ currentUser, handleCreate }) {
   return (
     <div>
       
-      <h3>Create A New Group</h3>
+      <h4>Create A New Group</h4>
       <form onSubmit={handleSubmit}>
-        <label>Topic:</label>
-        <input
+        {/* <label>Topic:</label> */}
+        <textarea
+          className="new-message-box"
+          placeholder="Topic :"
           required
           type="text"
           value={topic}
           onChange={(e)=>setTopic(e.target.value)}
+          onKeyPress={(e) => (e.key === 'Enter'?handleSubmit(e):null)}
           />
-        <button type="submit">Submit</button>
+        <button type="submit" className="icon-show-submit">Submit</button>
       </form>
       <p>{status}</p>
       

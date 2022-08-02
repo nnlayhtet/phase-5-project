@@ -5,7 +5,7 @@ function Navigation({setCurrentUser, currentUser, handleLogout}) {
 
   return (
     <div id="nav-div">
-        <h2 className="app-title">Group Chat App</h2>
+        <h2 className="app-title">Chat For Fun</h2>
         {currentUser?
           <nav id="nav-bar">
             <NavLink className="nav-button" activeClassName="n-active" exact to="/">Home</NavLink>

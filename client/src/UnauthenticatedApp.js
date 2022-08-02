@@ -6,7 +6,6 @@ import Signup from './Signup'
 function UnauthenticatedApp({ setCurrentUser }) {
   return (
     <div >
-      <h1 className="app-title">Group Chat App</h1>
       <Switch>
         <Route exact path="/">
           <Login setCurrentUser={setCurrentUser} />

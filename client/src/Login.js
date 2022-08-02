@@ -34,7 +34,8 @@ function Login({setCurrentUser}) {
         })
       } else {
         res.json().then(e => {
-          setDisplayError(e.errors)
+          console.log(e.error)
+          setDisplayError(e.error.toUpperCase())
         })
       }
     })
@@ -43,16 +44,18 @@ function Login({setCurrentUser}) {
   return (
     <div className="form">
         <form onSubmit={handleSubmit}> 
+            <h1 className="app-title">Chat For Fun</h1>
             <h2>Log In</h2>            
-            <label>Username</label>		
-            <input 
+            <label style={{display:"flex"}}>Username</label>		
+            <input
+                autoComplete="off"
                 required
                 type="text" 
                 name="username"
                 value={formData.username}
                 onChange={handleChange}/>
             <br/>
-            <label>Password</label>
+            <label style={{display:"flex"}}>Password</label>
             <input 
                 required
                 type="password" 

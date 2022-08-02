@@ -5,7 +5,7 @@ function MyGroups({ renderMyGroups, setSearchInput}) {
   useEffect(()=>setSearchInput(''),[])
   return (
     <div>
-      <h3>My Groups</h3>
+      <h4>My Groups</h4>
       <Search searchInput={setSearchInput}/>
       {renderMyGroups}
     </div>

@@ -4,6 +4,8 @@
 
 .app-title {
   /* color: White; */
+  /* display: flex; */
+  /* align-items: right; */
 }
 
 #chat-box {
@@ -24,6 +26,9 @@
 
 #delete-button {
   background-color: rgb(247, 100, 46);
+  border-radius: 5px;
+  margin: 0.5rem;
+  color: white;
 }
 
 #end-of-chat, #name, #time-display {
@@ -31,9 +36,13 @@
   font-size: 11px;
 }
 
+.edit-delete-messages {
+  display: flex;
+}
+
 .group-card {
   margin: 1.5rem;
-  padding-bottom: 15px;
+  /* padding-bottom: 15px; */
   background-color: rgb(224, 250, 236);
   border: 2px solid lightgray;
   text-align: center;
@@ -47,12 +56,49 @@
   transform: scale(1.05);
 }
 
+.icon-show-edit {
+  display: flex;
+  cursor: pointer;
+  background-color: rgb(171, 232, 253);
+  /* margin-right: 10px; */
+  margin-left: calc(140% - 260px);
+  border: 2px solid rgb(171, 232, 253);;
+  border-radius: 20px;
+  position: relative;
+}
+
+.icon-show-delete {
+  display: flex;
+  cursor: pointer;
+  background-color: rgb(171, 232, 253);
+  margin-right: 10px;
+  /* margin-left: calc(130% - 320px); */
+  border: 2px solid rgb(171, 232, 253);;
+  border-radius: 20px;
+  position: relative;
+}
+
+.icon-show-submit{
+  position: absolute;
+  padding: 8px;
+  background-color: rgb(171, 232, 253);
+  border-radius: 5px;
+}
+
+.icon-hide {
+  display: none;
+}
+
 #join-button, #open-button {
   background-color: lightgreen;
+  border-radius: 5px;
+  margin: 0.5rem;
 }
 
 #leave-button {
   background-color: pink;
+  border-radius: 5px;
+  margin: 0.5rem;
 }
 
 .login-signup {
@@ -82,6 +128,7 @@
   border: 2px solid lightgray;
   border-radius: 20px;
   position: relative;
+  word-wrap: break-word;
 }
 
 .message-receiver {
@@ -90,12 +137,14 @@
   margin-right: calc(100% - 320px);
   border: 2px solid lightgray;
   border-radius: 20px;
+  word-wrap: break-word;
 }
 
 #nav-div {
   padding-top: 1px;
   padding-bottom: 5px;
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
+  background: rgb(250, 229, 229);
   margin: auto;
 }
 
@@ -129,6 +178,11 @@
   color:red;
 }
 
+.new-message-box {
+  width: 270px;
+    /* word-wrap: break-word; */
+}
+
 /* Design based on Blue Login Field of Kevin Sleger https://codepen.io/MurmeltierS/pen/macKb */
 /* Design based on Blue Login Field of Kevin Sleger https://codepen.io/MurmeltierS/pen/macKb */
 body {
@@ -154,13 +208,13 @@ body::before {
 
 .form {
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   background: rgb(250, 229, 229);
-  width: 285px;
-  margin: -140px 0 0 -182px;
+  width: 250px;
+  margin: -140px 0 0 -165px;
   padding: 40px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
 }
 

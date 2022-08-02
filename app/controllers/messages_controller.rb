@@ -16,6 +16,14 @@ class MessagesController < ApplicationController
         end
     end
 
+    def update
+        message = Message.find(params[:id])
+        message.content = "*message deleted*"
+        message.save
+        group = Group.find(message.group_id)
+        render json: group.messages.sort
+    end
+
     private
 
     def message_params

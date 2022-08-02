@@ -30,36 +30,38 @@ function Signup({setCurrentUser}) {
       })
       } else {
         res.json().then(e => {
-          setDisplayError(e.errors.join(", "))
+          setDisplayError(e.errors.join("; ").toUpperCase())
         })
       }
     })
  }
   return (
     <div className="form">
+      <h1 className="app-title">Chat For Fun</h1>
       <form onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
-        <label>Username</label>		
-        <input 
+        <label style={{display:"flex"}}>Username</label>		
+        <input
+            autoComplete="off"
             required
             type="text" 
             name="username"
             value={username}
             onChange={(e) => {
-            setDisplayError("")
-            setUsername(e.target.value)}}/>
+              setDisplayError("")
+              setUsername(e.target.value)}}/>
         <br/>
-        <label>Password</label>
+        <label style={{display:"flex"}}>Password</label>
         <input
             required
             type="password" 
             name=""
             value={password}
             onChange={(e)=> {
-            setDisplayError("")
-            setPassword(e.target.value)}}/>
+              setDisplayError("")
+              setPassword(e.target.value)}}/>
         <br/>
-        <label>Password Confirmation</label>
+        <label style={{display:"flex"}}>Password Confirmation</label>
         <input 
             required
             type="password" 

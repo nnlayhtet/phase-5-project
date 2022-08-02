@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
     def messages_index
         group = Group.find(params[:group_id])
         messages = group.messages
-        render json: messages        
+        render json: messages.sort
     end
 
     def join_group_create

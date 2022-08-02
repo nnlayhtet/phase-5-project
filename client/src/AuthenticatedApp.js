@@ -3,7 +3,7 @@ import Navigation from './Navigation'
 import {useHistory} from 'react-router-dom'
 import Main from './Main'
 
-function AuthenticatedApp({currentUser, setCurrentUser, cableApp}) {
+function AuthenticatedApp({currentUser, setCurrentUser}) {
     
     const history = useHistory()
 
@@ -26,7 +26,7 @@ function AuthenticatedApp({currentUser, setCurrentUser, cableApp}) {
                 setCurrentUser={setCurrentUser}
                 currentUser={currentUser}
                 handleLogout={handleLogout}/>
-            <Main currentUser={currentUser} cableApp={cableApp}/>
+            <Main currentUser={currentUser}/>
         </div>
     )
 }
