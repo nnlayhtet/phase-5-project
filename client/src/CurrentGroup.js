@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useContext, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { ActionCableContext } from './index.js'
@@ -12,6 +13,7 @@ function CurrentGroup({ currentUser }) {
     let { id } = useParams()
     const cable = useContext(ActionCableContext)
     const bottomRef = useRef(null)
+    const [ scroll, setScroll ] = useState(false)
     
     useEffect (()=> {
         fetch(`/groups/${id}`)
@@ -24,7 +26,9 @@ function CurrentGroup({ currentUser }) {
     useEffect (()=> {
         fetch(`/groups/${id}/messages`)
         .then(res => res.json())
-        .then(data => setMessages(data))
+        .then(data => {
+            setMessages(data)
+            setScroll(!scroll)})
     },[id])
    
     useEffect(() => {
@@ -36,9 +40,12 @@ function CurrentGroup({ currentUser }) {
             },
             {
                 received: (data) => {
+                
                 fetch(`/groups/${id}/messages`)
                 .then(res => res.json())
-                .then(data => setMessages(data))
+                .then(data => {
+                    setMessages(data)
+                    setScroll(!scroll)})
             },
             }
         )
@@ -51,7 +58,7 @@ function CurrentGroup({ currentUser }) {
     useEffect(() => {
     // 👇️ scroll to bottom every time messages change
         bottomRef.current?.scrollIntoView({behavior: 'auto'});
-    }, [messages]);
+    },[scroll]);
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -79,7 +86,6 @@ function CurrentGroup({ currentUser }) {
         .then(data => setMessages(data))
     }
 
-
     function msgEditSubmit(e,message_id){
         e.preventDefault()
         // console.log(message_id)
@@ -96,7 +102,22 @@ function CurrentGroup({ currentUser }) {
         .then(data => setMessages(data))
     }
 
-    const renderMessages = messages.map((m)=><MessageCard key={m.id} id={m.id} content={m.content} time={m.time} sender_name={m.sender_name} currentUser={currentUser} msgDeleteClick={msgDeleteClick} msgEditSubmit={msgEditSubmit}/>)
+    function handleLikes(message_id){
+        // console.log(message_id)
+        // console.log(currentUser.username)
+        fetch(`/messages/like/${message_id}`,{
+        method: 'PATCH',
+        headers: {
+            'Content-Type':'application/json',
+            Accept: "application/json",
+            },
+        body: JSON.stringify({liked_by:currentUser.username})
+        })
+        .then(res => res.json())
+        .then(data => setMessages(data))
+    }
+
+    const renderMessages = messages.map((m)=><MessageCard key={m.id} id={m.id} liked_by={m.liked_by} handleLikes={handleLikes} content={m.content} time={m.time} sender_name={m.sender_name} currentUser={currentUser} msgDeleteClick={msgDeleteClick} msgEditSubmit={msgEditSubmit}/>)
     const renderMemberList = (currentGroup.members)? (currentGroup.members.map((m)=>m.username).join(', ')):null
 
     return (

@@ -59,22 +59,22 @@
 .icon-show-edit {
   display: flex;
   cursor: pointer;
-  background-color: rgb(171, 232, 253);
+  background-color: transparent;
   /* margin-right: 10px; */
   margin-left: calc(140% - 260px);
-  border: 2px solid rgb(171, 232, 253);;
-  border-radius: 20px;
+  border: none;
+  /* border-radius: 20px; */
   position: relative;
 }
 
 .icon-show-delete {
   display: flex;
   cursor: pointer;
-  background-color: rgb(171, 232, 253);
+  background-color: transparent;
   margin-right: 10px;
   /* margin-left: calc(130% - 320px); */
-  border: 2px solid rgb(171, 232, 253);;
-  border-radius: 20px;
+  border: none;
+  /* border-radius: 20px; */
   position: relative;
 }
 
@@ -101,15 +101,13 @@
   margin: 0.5rem;
 }
 
-/* .login-signup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 2px solid lightgray;
-  width: 60%;
-  margin:auto;
-} */
+.like-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 11px;
+  color: grey;
+}
 
 #logout-button {
   background-color: lightpink;

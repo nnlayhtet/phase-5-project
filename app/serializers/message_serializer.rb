@@ -1,5 +1,5 @@
 class MessageSerializer < ActiveModel::Serializer
-  attributes :id, :content, :group_id, :user_id, :time, :sender_name
+  attributes :id, :content, :group_id, :user_id, :time, :sender_name, :liked_by
 
   def time
     self.object.created_at.strftime("%l:%M %p  (%b %e, %y)")

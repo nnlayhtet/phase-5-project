@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function MessageCard({ id, content, time, sender_name, currentUser, msgDeleteClick, msgEditSubmit}) {
+function MessageCard({ id, liked_by, handleLikes, content, time, sender_name, currentUser, msgDeleteClick, msgEditSubmit}) {
 
   const [ showForm, setShowForm ] = useState(false)
   let sender = sender_name===currentUser.username ? true : false
@@ -25,6 +25,7 @@ function MessageCard({ id, content, time, sender_name, currentUser, msgDeleteCli
           />
           <button type="submit">Submit</button>
         </form>)}
+        <button className="like-button" onClick={()=>handleLikes(id)}>{liked_by===null?"🤍":`❤️ by ${liked_by}`}</button>
         </div>
         {/* <br/> */}
     </div>
