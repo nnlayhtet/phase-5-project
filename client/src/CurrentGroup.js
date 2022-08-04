@@ -58,7 +58,7 @@ function CurrentGroup({ currentUser }) {
     useEffect(() => {
     // 👇️ scroll to bottom every time messages change
         bottomRef.current?.scrollIntoView({behavior: 'auto'});
-    },[scroll]);
+    },[messages]);
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -134,7 +134,7 @@ function CurrentGroup({ currentUser }) {
                 <textarea
                     className="new-message-box"
                     required
-                    placeholder="New Message"
+                    placeholder="  New Message"
                     value={content}
                     onChange={(e)=>setContent(e.target.value)}
                     onKeyPress={(e) => (e.key === 'Enter'?handleSubmit(e):null)}

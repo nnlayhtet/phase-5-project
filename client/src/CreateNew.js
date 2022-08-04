@@ -33,7 +33,8 @@ function CreateNew({ currentUser, handleCreate }) {
       <h4>Create A New Group</h4>
       <form className="new-message-form" onSubmit={handleSubmit}>
         {/* <label>Topic:</label> */}
-        <textarea
+        <div className='group-form'>
+          <textarea
           className="new-message-box"
           placeholder="Topic :"
           required
@@ -43,6 +44,8 @@ function CreateNew({ currentUser, handleCreate }) {
           onKeyPress={(e) => (e.key === 'Enter'?handleSubmit(e):null)}
           />
         <button type="submit" className="icon-show-submit">Submit</button>
+        </div>
+        
       </form>
       <p>{status}</p>
       
