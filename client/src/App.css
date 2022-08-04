@@ -8,6 +8,11 @@
   /* align-items: right; */
 }
 
+.about-page {
+  margin: auto;
+  width: 80%;
+}
+
 #chat-box {
   margin: 1rem;
   background-color: #fbecfb;
@@ -184,4 +189,8 @@
 .new-message-form{
   padding: 5px;
   margin-right: 13%;
+}
+
+#qr-code {
+  max-width: 200px;
 }
